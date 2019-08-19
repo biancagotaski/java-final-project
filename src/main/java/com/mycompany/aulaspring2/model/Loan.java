@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.aulaspring2.model;
 
 import java.time.LocalDateTime;
@@ -15,8 +10,8 @@ public class Loan {
     private LocalDateTime startDate;
     private LocalDateTime endDate;
     private String cpfCustomer;
-//    private Customer customer;
-//    private Product product;
+    private Customer customer;
+    private Product product;
 
     //keyshortcut: alt+insert to generate getters and setters
     public LocalDateTime getStartDate() {
@@ -41,5 +36,21 @@ public class Loan {
 
     public void setCpfCustomer(String cpfCustomer) {
         this.cpfCustomer = cpfCustomer;
+    }
+    
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+    
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
     }
 }
