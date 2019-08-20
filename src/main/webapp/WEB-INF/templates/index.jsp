@@ -9,10 +9,19 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Login</title>
     </head>
     <body>
-        <h1>Welcome!</h1>
-        <a href="/loan/index">loan list</a>
+        <h1>Logar!</h1>
+        
+        <h2>${message}</h2>
+        
+        <form method="post" action="${pageContext.request.contextPath}/user/login">
+            <label>User</label>
+            <input name="username"/>
+            <label>Password</label>
+            <input type="password" name="password"/>
+            <input type="submit" value="Loggin"/>
+        </form>
     </body>
 </html>
