@@ -1,14 +1,23 @@
 package com.mycompany.aulaspring2.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  *
  * @author Bianca
  */
+@Entity
 public class Printer extends Product{
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private boolean isLaser;
     private int maxLeaf;
     private boolean hasWifi;
-
+//
     public boolean isIsLaser() {
         return isLaser;
     }

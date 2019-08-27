@@ -10,7 +10,11 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  *
@@ -35,4 +39,22 @@ public class LoanController {
         return "/loan/index";
     }
     
+    @RequestMapping("/loan/insert")
+    public String insert(Model model){
+        Loan loan = new Loan();
+        model.addAttribute("loan", loan);
+        return "/loan/insert";
+    }
+    
+    @RequestMapping(value = "/loan/insertAction", method = RequestMethod.POST)
+    public String insertAction(
+            @ModelAttribute("loan") Loan loan, 
+            BindingResult result, 
+            ModelMap model){
+        if(result.hasErrors()){
+            return "/loan/error/";
+        }
+        model.addAttribute("loan", loan);
+        return "/loan/visualization";
+    }
 }

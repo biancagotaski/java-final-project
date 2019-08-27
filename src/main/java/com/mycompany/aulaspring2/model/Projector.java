@@ -1,10 +1,20 @@
 package com.mycompany.aulaspring2.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  *
  * @author Bianca
  */
+@Entity
 public class Projector extends Product{
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private String resolution;
     private boolean hasLCD;
     private boolean hasLaser;

@@ -1,12 +1,22 @@
 package com.mycompany.aulaspring2.model;
 
 import java.time.LocalDateTime;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 /**
  *
  * @author Bianca
  */
+@Entity
 public class Customer {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private String name;
     private String lastName;
     private String email;
@@ -16,6 +26,7 @@ public class Customer {
     private int number;
     private String city;
     private String state;
+    @OneToOne(mappedBy = "customer", cascade = {CascadeType.ALL})
     private Loan loan;
 
     public String getName() {

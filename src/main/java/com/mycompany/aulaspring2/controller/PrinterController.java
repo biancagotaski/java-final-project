@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class PrinterController {
     
-    @RequestMapping("/url")
+    @RequestMapping("/printer")
     public String page(Model model) {
         model.addAttribute("attribute", "value");
         return "view.name";
