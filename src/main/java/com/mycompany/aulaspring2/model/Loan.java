@@ -1,11 +1,11 @@
 package com.mycompany.aulaspring2.model;
 
 import java.time.LocalDateTime;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 /**
@@ -23,7 +23,8 @@ public class Loan {
     private String cpfCustomer;
     @OneToOne
     private Customer customer;
-//    private Product product;
+    @ManyToOne
+    private Product product;
 
     public Loan(){}
     
@@ -60,11 +61,19 @@ public class Loan {
         this.customer = customer;
     }
     
-//    public Product getProduct() {
-//        return product;
-//    }
-//
-//    public void setProduct(Product product) {
-//        this.product = product;
-//    }
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+    
+    public int getId(){
+        return this.id;
+    }
+    
+    public void setId(int id){
+        this.id = id;
+    }
 }

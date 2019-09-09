@@ -26,7 +26,7 @@ public class Customer {
     private int number;
     private String city;
     private String state;
-    @OneToOne(mappedBy = "customer", cascade = {CascadeType.ALL})
+    @OneToOne(mappedBy = "customer", cascade = {CascadeType.ALL}, orphanRemoval = true)
     private Loan loan;
 
     public String getName() {
@@ -107,5 +107,13 @@ public class Customer {
 
     public void setLoan(Loan loan) {
         this.loan = loan;
+    }
+    
+    public int getId(){
+        return this.id;
+    }
+    
+    public void setId(int id){
+        this.id = id;
     }
 }

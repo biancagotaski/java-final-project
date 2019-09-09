@@ -29,26 +29,26 @@ public class UserController {
             HttpSession session,
             ModelMap modelMap) {
         
-        List<User> users = new ArrayList<User>();
-        users.add(new User("Bianca", "123"));
-        users.add(new User("Joana", "456"));
-        users.add(new User("Maria", "789"));
-        users.add(new User("admin", "admin"));
-        
-        for(User item : users){
-            if(item.getUsername().equalsIgnoreCase(username) && item.getPassword().equalsIgnoreCase(password)){
-                return "user/successful";
-            }
-        }
-        return "redirect:../?message="+"Login inválido!";
-        
-//        if("admin".equalsIgnoreCase(username) && "admin".equalsIgnoreCase(password)){
-//            session.setAttribute("username", username);
-//            
-//            return "user/successful";
-//        } else {
-//            return "redirect:../?message="+"Login inválido!";
+//        List<User> users = new ArrayList<User>();
+//        users.add(new User("Bianca", "123"));
+//        users.add(new User("Joana", "456"));
+//        users.add(new User("Maria", "789"));
+//        users.add(new User("admin", "admin"));
+//        
+//        for(User item : users){
+//            if(item.getUsername().equalsIgnoreCase(username) && item.getPassword().equalsIgnoreCase(password)){
+//                return "user/successful";
+//            }
 //        }
+//        return "redirect:../?message="+"Login inválido!";
+        
+        if("admin".equalsIgnoreCase(username) && "admin".equalsIgnoreCase(password)){
+            session.setAttribute("username", username);
+            
+            return "user/successful";
+        } else {
+            return "redirect:../?message="+"Login inválido!";
+        }
     }
     
 }

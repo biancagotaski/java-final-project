@@ -1,6 +1,8 @@
 package com.mycompany.aulaspring2.controller;
 
+import com.mycompany.aulaspring2.dao.ComputerRepository;
 import com.mycompany.aulaspring2.model.Computer;
+import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -16,11 +18,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class ComputerController {
     
+    private ComputerRepository repository;
+    
+    public ComputerController(ComputerRepository repository){
+        this.repository = repository;
+    }
+    
     @RequestMapping("/computer")
-    public String page(Model model) {
+    public String index(Model model) {
         
-        Computer comp1 = new Computer();        
-        model.addAttribute("computer", comp1);
+        List<Computer> computers = this.repository.findAll();
+        
+        model.addAttribute("computers", computers);
         return "/computer/index";
     }
     

@@ -43,5 +43,11 @@ public class Projector extends Product{
         this.hasLaser = hasLaser;
     }
     
+    public int getId(){
+        return this.id;
+    }
     
+    public void setId(int id){
+        this.id = id;
+    }
 }
