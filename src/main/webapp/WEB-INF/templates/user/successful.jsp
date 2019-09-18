@@ -14,5 +14,6 @@
     <body>
         <% //String namePath = ${pageContext.request.contextPath}%>
         <h1>Bem vindo ${sessionScope.username}</h1>
+        <a href="/customer">Ir para a página inicial</a>
     </body>
 </html>
