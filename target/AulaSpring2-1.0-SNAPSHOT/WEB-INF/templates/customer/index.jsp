@@ -5,11 +5,18 @@
 --%>
 
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<<<<<<< HEAD
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <c:import url="/template/header" />
     
+    <script>
+        function remove(message, url){
+            if(confirm(message)){
+                window.location = url;
+            }
+        }    
+    </script>
+
     <a href="/customer/insert">Inserir novo cliente</a>
 
     <table border>
@@ -30,7 +37,7 @@
                 <td>
                     <a href="/customer/update/${customer.getId()}">Alterar</a>
                     &nbsp;
-                    <a href="#" onclick="remover('Deseja Remover?', 'customer/remove/${customer.getId()}')">Remover</a>
+                    <a href="#" onclick="remove('Deseja Remover?', '${pageContext.request.contextPath}/customer/remove/${customer.getId()}')">Remover</a>
                 </td>
             </tr>
         </c:forEach>
