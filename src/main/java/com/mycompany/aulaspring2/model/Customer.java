@@ -20,13 +20,13 @@ public class Customer {
     private String name;
     private String lastName;
     private String email;
-    private LocalDateTime birthday;
+    private String birthday;
     private String CPF;
     private String street;
     private int number;
     private String city;
     private String state;
-    @OneToOne(mappedBy = "customer", cascade = {CascadeType.ALL})
+    @OneToOne(mappedBy = "customer", cascade = {CascadeType.ALL}, orphanRemoval = true)
     private Loan loan;
 
     public String getName() {
@@ -53,11 +53,11 @@ public class Customer {
         this.email = email;
     }
 
-    public LocalDateTime getBirthday() {
+    public String getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(LocalDateTime birthday) {
+    public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
 
@@ -107,5 +107,13 @@ public class Customer {
 
     public void setLoan(Loan loan) {
         this.loan = loan;
+    }
+    
+    public int getId(){
+        return this.id;
+    }
+    
+    public void setId(int id){
+        this.id = id;
     }
 }

@@ -7,7 +7,7 @@ import java.util.UUID;
  * @author Bianca
  */
 public class User {
-    private UUID id;
+    private int id;
     private String username;
     private String password;
 
@@ -30,5 +30,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+    
+    public int getId(){
+        return this.id;
+    }
+    
+    public void setId(int id){
+        this.id = id;
     }
 }

@@ -5,9 +5,9 @@
  */
 package com.mycompany.aulaspring2.controller;
 
+import com.mycompany.aulaspring2.dao.LoanRepository;
 import com.mycompany.aulaspring2.model.Loan;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
+import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -23,19 +23,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class LoanController {
     
+    private LoanRepository repository;
+    
+    public LoanController(LoanRepository repository){
+        this.repository = repository;
+    }
+    
     @RequestMapping("/loan")
     public String index(Model model) {
         
-        ArrayList<Loan> loans = new ArrayList<Loan>();
+        List<Loan> loans = this.repository.findAll();
         
-        Loan l1 = new Loan();
-        l1.setEndDate(LocalDateTime.now());
-        l1.setStartDate(LocalDateTime.now());
-        l1.setCpfCustomer("16159777750");        
-        
-        loans.add(l1);
-        
-        model.addAttribute("loan", loans);
+        model.addAttribute("loans", loans);
         return "/loan/index";
     }
     

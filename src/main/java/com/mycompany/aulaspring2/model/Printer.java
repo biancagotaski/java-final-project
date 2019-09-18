@@ -14,6 +14,7 @@ public class Printer extends Product{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private boolean isLaser;
     private int maxLeaf;
     private boolean hasWifi;
@@ -42,5 +43,11 @@ public class Printer extends Product{
         this.hasWifi = hasWifi;
     }
     
+    public int getId(){
+        return this.id;
+    }
     
+    public void setId(int id){
+        this.id = id;
+    }
 }
