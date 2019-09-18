@@ -28,9 +28,6 @@ public class ComputerController {
     public String index(Model model) {
         
         List<Computer> computers = this.repository.findAll();
-        
-        System.out.println(computers);
-        
         model.addAttribute("computers", computers);
         return "/computer/index";
     }

@@ -14,12 +14,29 @@
     </head>
     <body>
         <table border>
+<<<<<<< HEAD
             <tr><th>Sistema Operacional</th><th>Número de Núcleos</th><th>Possui Acessórios</th></tr>
             <c:forEach items="${computers}" var="computer">
                 <tr>
                     <td>${computer.getOperationalSystem()}</td>
                     <td>${computer.getCores()}</td>
                     <td>${computer.isHasAccessories()}</td>
+=======
+            <tr><th>Sistema Operacional</th><th>Número de Núcleos</th><th>Possui Acessórios</th><th>Veículos</th><th>Ações</th></tr>
+            <c:forEach items="${computers}" var="computer">
+                <tr>
+                    <td>${computer.getNome()}</td>
+                    <td>${computer.getIdade()}</td>
+                    <td>
+                        ${(computer.getHabilitacao() != null)
+                          ? computer.getHabilitacao().getNumero()
+                          : "-"
+                        }
+                    </td>
+                    <td>
+                        <a href="/veiculo/porProprietario/${pessoa.getId()}">Veículos</a>
+                    </td>
+>>>>>>> f409e4d013c16f87cd2f0c7d5326df4f60932b74
                     <td>
                         <a href="/computer/update/${computer.getId()}">Alterar</a>
                         &nbsp;

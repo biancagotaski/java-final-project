@@ -181,6 +181,7 @@ INSERT INTO PRODUCT VALUES (NULL, NULL, 'HP', 'HP PROFESSIONAL', 54545, 5584, TR
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
+<<<<<<< HEAD
 2019-09-08 18:12:23 jdbc[14]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "HP" not found; SQL statement:
 INSERT INTO PRODUCT VALUES (NULL, NULL, "HP", "HP SERIES", 5454, 785.80, TRUE, FALSE, 0, 8, TRUE, "WINDOWS", FALSE, FALSE, 27.1) [42122-199]
@@ -2119,3 +2120,5 @@ Caused by: java.lang.IllegalArgumentException: 17-12-2019
 	at org.h2.util.DateTimeUtils.parseTimestamp(DateTimeUtils.java:528)
 	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:138)
 	... 143 more
+=======
+>>>>>>> f409e4d013c16f87cd2f0c7d5326df4f60932b74
