@@ -18,11 +18,6 @@
                 <td>${loan.getEndDate()}</td>
                 <td>${loan.getCpfCustomer()}</td>
                 <!-- INSERIR OS CAMPOS QUE POSSUEM RELACIONAMENTO -->
-                <td>
-                    <a href="/customer/update/${loan.getId()}">Alterar</a>
-                    &nbsp;
-                    <a href="#" onclick="remover('Deseja Remover?', 'loan/remove/${loan.getId()}')">Remover</a>
-                </td>
             </tr>
         </c:forEach>
     </table>

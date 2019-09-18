@@ -1,10 +1,12 @@
 <nav>
-    <a href="computer/index">Computadores</a>
+    <a href="/computer">Computadores</a>
     &nbsp;
-    <a href="printer/index">Impressoras</a>
+    <a href="/printer">Impressoras</a>
      &nbsp;
-    <a href="projector/index">Projetores</a>
+    <a href="/projector">Projetores</a>
      &nbsp;
-    <a href="customer/index">Cliente</a>
+    <a href="/customer">Clientes</a>
+    &nbsp;
+    <a href="/loan">Empréstimos</a>
 </nav>
 <hr />

@@ -38,22 +38,22 @@ public class LoanController {
         return "/loan/index";
     }
     
-    @RequestMapping("/loan/insert")
-    public String insert(Model model){
-        Loan loan = new Loan();
-        model.addAttribute("loan", loan);
-        return "/loan/insert";
-    }
-    
-    @RequestMapping(value = "/loan/insertAction", method = RequestMethod.POST)
-    public String insertAction(
-            @ModelAttribute("loan") Loan loan, 
-            BindingResult result, 
-            ModelMap model){
-        if(result.hasErrors()){
-            return "/loan/error/";
-        }
-        model.addAttribute("loan", loan);
-        return "/loan/visualization";
-    }
+//    @RequestMapping("/loan/insert")
+//    public String insert(Model model){
+//        Loan loan = new Loan();
+//        model.addAttribute("loan", loan);
+//        return "/loan/insert";
+//    }
+//    
+//    @RequestMapping(value = "/loan/insertAction", method = RequestMethod.POST)
+//    public String insertAction(
+//            @ModelAttribute("loan") Loan loan, 
+//            BindingResult result, 
+//            ModelMap model){
+//        if(result.hasErrors()){
+//            return "/loan/error/";
+//        }
+//        model.addAttribute("loan", loan);
+//        return "/loan/visualization";
+//    }
 }

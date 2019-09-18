@@ -6,13 +6,8 @@
 
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:import url="/template/header" />
         <table border>
             <tr><th>Sistema Operacional</th><th>Número de Núcleos</th><th>Possui Acessórios</th></tr>
             <c:forEach items="${computers}" var="computer">
@@ -28,5 +23,4 @@
                 </tr>
             </c:forEach>
         </table>
-    </body>
-</html>
+<c:import url="/template/footer" />
