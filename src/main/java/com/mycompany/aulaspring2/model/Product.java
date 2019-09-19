@@ -1,5 +1,6 @@
 package com.mycompany.aulaspring2.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -25,6 +26,7 @@ public class Product {
     private float value;
     private int serialNumber;
     private String brand;
+    @JsonIgnore
     @OneToMany(mappedBy = "product", cascade = {CascadeType.ALL})
     private Set<Loan> loans;
 

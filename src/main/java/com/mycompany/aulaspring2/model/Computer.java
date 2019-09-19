@@ -19,7 +19,7 @@ public class Computer extends Product{
     private String operationalSystem;
     private int cores;
     private boolean hasAccessories; //it means if the loan will be with mouse, keyboard and speaker/
-
+    
     public String getOperationalSystem() {
         return operationalSystem;
     }
