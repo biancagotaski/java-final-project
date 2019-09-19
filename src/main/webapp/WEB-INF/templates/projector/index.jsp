@@ -10,13 +10,17 @@
 <c:import url="/template/header" />
 
     <table border>
-        <tr><th>Id</th><th>Resolução em Pixels</th><th>Possui LCD?</th><th>Possui Laser?</th></tr>
+        <tr><th>Id</th><th>Resolução em Pixels</th><th>Possui LCD?</th><th>Possui Laser?</th><th>Nome do Produto</th><th>Preço</th><th>Número de Série</th><th>Marca</th></tr>
         <c:forEach items="${projectors}" var="projector">
             <tr>
                 <td>${projector.getId()}</td>
                 <td>${projector.getResolution()}</td>
                 <td>${projector.isHasLCD()}</td>
                 <td>${projector.isHasLaser()}</td>
+                <td>${projector.getName()}</td>
+                <td>${projector.getValue()}</td>
+                <td>${projector.getSerialNumber()}</td>
+                <td>${projector.getBrand()}</td>
             </tr>
         </c:forEach>
     </table>

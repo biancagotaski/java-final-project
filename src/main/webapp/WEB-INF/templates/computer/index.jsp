@@ -9,12 +9,16 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:import url="/template/header" />
         <table border>
-            <tr><th>Sistema Operacional</th><th>Número de Núcleos</th><th>Possui Acessórios</th></tr>
+            <tr><th>Sistema Operacional</th><th>Número de Núcleos</th><th>Possui Acessórios</th><th>Nome do Produto</th><th>Preço</th><th>Número de Série</th><th>Marca</th></tr>
             <c:forEach items="${computers}" var="computer">
                 <tr>
                     <td>${computer.getOperationalSystem()}</td>
                     <td>${computer.getCores()}</td>
                     <td>${computer.isHasAccessories()}</td>
+                    <td>${computer.getName()}</td>
+                    <td>${computer.getValue()}</td>
+                    <td>${computer.getSerialNumber()}</td>
+                    <td>${computer.getBrand()}</td>
                     <td>
                         <a href="/computer/update/${computer.getId()}">Alterar</a>
                         &nbsp;

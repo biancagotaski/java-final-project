@@ -10,13 +10,17 @@
 <c:import url="/template/header" />
 
     <table border>
-        <tr><th>Id</th><th>Possui Laser?</th><th>Quantidade máxima de folhas</th><th>Possui Wi-Fi?</th></tr>
+        <tr><th>Id</th><th>Possui Laser?</th><th>Quantidade máxima de folhas</th><th>Possui Wi-Fi?</th><th>Nome do Produto</th><th>Preço</th><th>Número de Série</th><th>Marca</th></tr>
         <c:forEach items="${printers}" var="printer">
             <tr>
                 <td>${printer.getId()}</td>
                 <td>${printer.isIsLaser()}</td>
                 <td>${printer.getMaxLeaf()}</td>
                 <td>${printer.isHasWifi()}</td>
+                <td>${printer.getName()}</td>
+                <td>${printer.getValue()}</td>
+                <td>${printer.getSerialNumber()}</td>
+                <td>${printer.getBrand()}</td>
             </tr>
         </c:forEach>
     </table>
