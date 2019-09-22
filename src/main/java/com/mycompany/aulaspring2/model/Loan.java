@@ -1,5 +1,6 @@
 package com.mycompany.aulaspring2.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.time.LocalDateTime;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,8 +22,10 @@ public class Loan {
     private String startDate;
     private String endDate;
     private String cpfCustomer;
+    @JsonIgnore
     @OneToOne
     private Customer customer;
+    @JsonIgnore
     @ManyToOne
     private Product product;
 
